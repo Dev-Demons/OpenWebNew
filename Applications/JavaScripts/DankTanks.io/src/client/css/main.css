@@ -1,0 +1,326 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    background-color: black;
+  }
+  
+  hr {
+    width: 100%;
+  }
+  
+  button {
+    font-size: 18px;
+    outline: none;
+    border: none;
+    color: black;
+    background-color: transparent;
+    padding: 5px 20px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: rgb(230, 230, 230);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  #game-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #play-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    padding: 20px 30px;
+    background-color:#4E4B4B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-family: "Courier New";
+  }
+
+  #game-options {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-40%) translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #choose-tank {
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .change-tank-button {
+    vertical-align: middle;
+    color: white;
+    font-size: 40px;
+    font-family: 'Chalkboard';
+  }
+
+  .change-tank-button:hover {
+    background-color: rgba(0,0,0,0);
+  }
+
+  ::placeholder {
+    color: #dbdbdb;
+  }
+  
+  #play-menu p {
+    margin-bottom: 0;
+  }
+
+  @keyframes boxShadowAnimation {
+    0% {box-shadow: rgb(0,0,0) 0px 0px 0px;}
+    50% {box-shadow: rgb(0,0,0) 0px 0px 30px;}
+    100% {box-shadow: rgb(0,0,0) 0px 0px 0px;}
+  }
+
+  @keyframes textShadowAnimation {
+    0% {text-shadow: rgb(0,0,0) 0px 0px 0px;}
+    50% {text-shadow: rgb(0,0,0) 0px 6px 50px;}
+    100% {text-shadow: rgb(0,0,0) 0px 0px 0px;}
+  }
+  
+  #play-menu input {
+    font-size: 20px;
+    outline: none;
+    margin-top: 70px;
+    margin-bottom: 5px;
+    padding: 3px;
+    text-align: center;
+    border-radius: 20px;
+    height: 40px;
+    border: 3px solid black !important;
+    background-color: #9276A3;
+    color: white;
+    animation-name: boxShadowAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+  
+  #play-menu input:hover {
+    outline: none;
+  }
+
+  #play-menu #play-button {
+    border: 3px solid black;
+    border-radius: 25px;
+    height: 40px;
+    margin-top: 50px;
+    width: -webkit-min-content; 
+    font-size: 20px;
+    padding: 3px 3px 5px 5px;
+    text-align: center;
+    background-color: #AECCA2;
+    color: black;
+    line-height: initial;
+    animation-name: boxShadowAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  #play-menu #play-button:hover {
+    background-color: #83f29f;
+  }
+
+  #logo {
+    font-size: 80px;
+    animation-name: textShadowAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  #scorecard {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: rgba(255, 255, 255);
+  }
+  
+  #leaderboard {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: rgba(255, 255, 255);
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  #leaderboard th {
+    text-align: center;
+    padding: 2px 5px;
+  }
+  
+  #leaderboard td {
+    text-align: center;
+    padding: 2px 5px;
+  }
+  
+  #disconnect-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  #disconnect-modal > div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    padding: 15px 20px;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 640px) {
+    h1 {
+      font-size: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.75rem;
+    }
+  
+    #play-menu {
+      padding: 10px 15px;
+      min-width: 280px;
+    }
+  
+    #disconnect-modal > div {
+      padding: 10px;
+      min-width: 280px;
+    }
+  
+    #leaderboard th {
+      padding: 0 3px;
+    }
+  
+    #leaderboard td {
+      padding: 0 3px;
+    }
+  
+    #leaderboard table {
+      font-size: 14px;
+    }
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 35px;
+    margin-top: 20px;
+    padding-top: 33px;
+    border: 3px solid black;
+    border-radius: 25px;
+        animation-name: boxShadowAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+
+  }
+
+  .switch input {display:none;}
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #B2022F;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 1.5px;
+    bottom: 4px;
+    background-color: #F2F3F4;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #AECCA2;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(55px);
+    -ms-transform: translateX(55px);
+    transform: translateX(55px);
+  }
+
+
+
+  .on
+  {
+    display: none;
+    color: black;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 36%;
+    font-size: 15.4px;
+    font-family: "Courier New";
+  }
+
+  .off
+  {
+    color: #dbdbdb;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 56%;
+    left: 63%;
+    font-size: 15px;
+    font-family: "Courier New";
+  }
+
+  input:checked+ .slider .on
+  {display: block;}
+
+  input:checked + .slider .off
+  {display: none;}
+
+  /*--------- END --------*/
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;} 

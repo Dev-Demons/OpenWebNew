@@ -1,0 +1,28 @@
+<script>
+    $(function () {
+        var msg = '<%- message %>';
+        if (msg == null || msg == undefined || msg == '') {
+            $.amaran({
+                'title': 'Welcome',
+                'message': ' <%- title %>!',
+                'inEffect': 'slideRight',
+                'cssanimationOut': 'zoomOutUp',
+                'position': "top right",
+                'delay': 3000,   //default             
+                'closeOnClick': true,
+                'closeButton': true
+            });
+        } else {
+            $.amaran({
+                'title': 'Message',
+                'message': msg,
+                'inEffect'  :'slideRight',
+                'cssanimationOut': 'zoomOutUp',
+                'position': "top right",
+                'sticky': true,
+                'closeOnClick': true,
+                'closeButton': true
+            });
+        }
+    });
+</script>

@@ -1,0 +1,33 @@
+<div class="modal fade" id="rounddetail_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog rounddetail_modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Room</h4>
+                <button type="button" class="button button-pill button-small cancel_button" id="rounddetail_cancelbutton">Cancel</button>
+                <button type="button" class="button button-pill button-primary button-small" id="rounddetail_joinbutton">Join</button>
+            </div>
+            <div class="modal-body">
+                <div id="rounddetail_id" style="display: none;"></div>
+
+                <div class="progress  progress-striped active rounddetail-progress">
+                    <div id="rounddetail_progress" class="progress-bar progress-bar-success" role="progressbar"></div>
+                </div>
+
+                <div id = "players_list">
+                    <b>Players List</b>
+                    <ul class="mdl-list" id="rounddetail_playerlist"></ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="rounddetail_li_template" style="display: none;">
+    <li>
+        <span class="player-name">
+        </span>
+    </li>
+</div>

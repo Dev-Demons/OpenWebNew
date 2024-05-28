@@ -1,0 +1,56 @@
+<%- include('../includes/admin-header.ejs') %>
+<%- include('../includes/admin-navbar.ejs') %>
+<%- include('../includes/admin-sidebar.ejs') %>
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    
+
+<div class="container-fluid pt-4 px-4">
+  <div class="cake-container text-center rounded p-4">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+          <h6 class="mb-0">Categories</h6>
+        
+      </div>
+      <% if (message) { %>
+        <div class="success-message"><%= message %></div>
+    <% } %>
+      <div class="table-responsive">
+          <table class="table text-start align-middle table-bordered table-hover mb-0">
+              <thead>
+                  <tr class="text-white">   
+                      <th scope="col">Image</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Category ID</th>
+                      <th scope="col">Edit</th>
+                      <th scope="col">Delete</th>
+                  </tr>
+              </thead>
+              <tbody>
+
+                <% categories.forEach(category => { %>
+                    <tr>
+                        <td class="col-auto"><img src="/data/uploads/<%= category.categoryImage%>" class="img-fluid  h-20" width="150"></td>
+                       
+                        <td><%= category.categoryName%></td>
+                        <td><%= category.categoryID%></td>
+                        
+                        <td><a class="btn btn-sm btn-warning" href="/cakemania.ng/admin/categories/edit-cat/<%= category.categoryID%>">Edit</a></td>
+                        <td><a class="btn btn-sm btn-danger trigger-btn" href="#myModal-<%= category.categoryID %>" data-bs-toggle="modal" >Delete</a></td>
+
+                        <%- include('../includes/cat-modal.ejs', { categoryID: category.categoryID }) %>
+
+                    </tr>
+                <% }); %>
+
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+<!-- Recent Sales End -->
+  </main>
+</div>
+</div>
+
+
+<%- include('../includes/admin-footer.ejs') %>

@@ -1,0 +1,84 @@
+<%- include('../includes/header.ejs') %>
+   
+<%- include('../includes/navbar.ejs') %>
+
+<%- include('../includes/user-sidebar.ejs') %>
+
+
+            <div class="col-md-9">
+                <div class="container user-account-contents rounded-3">
+                    <div class="row">
+                    <div class="col-sm-12 col-md-12 mb-3 mt-3">
+                        
+                        <form id="edit-profile-form" action="/cakemania.ng/users/profile/edit/<%=user.userID%>?_method=PUT" method="post">
+                            <h3>Edit Info</h3>
+                        
+                        <% if (successMessage) { %>
+                            <div class="success-message"><%= successMessage %></div>
+                        <% } %>
+
+
+                    </div>
+                    <hr>
+                        
+
+                        <!-- First Name and Last Name -->
+                        <div class="col-md-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" name="firstName" id="firstName" value="<%= user.firstName%>" readonly>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" name="lastName" id="lastName" value="<%= user.lastName%>" readonly>
+                        </div>
+            
+                        <!-- Phone Number and Additional Phone Number -->
+                        <div class="col-md-6">
+                            <label for="phoneNo" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" name="phoneNo" id="phoneNo" value="<%= user.phoneNo%>">
+                        </div>
+            
+                        <!-- Delivery Address -->
+                        <div class="col-12">
+                            <label for="address" class="form-label">Delivery Address</label>
+                            <textarea class="form-control" name="address" id="address" rows="3"><%= user.address%></textarea>
+                        </div>
+            
+                        <!-- States and Local Governments -->
+                        <div class="col-md-6">
+                            <label for="state" class="form-label">State</label>
+                            <select class="form-select" id="state" name="state">
+                                <!-- Add options for states -->\
+                                <option >Select State</option>
+                                <option value="Lagos" selected>Lagos</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+
+                        <%- include('../includes/user-lga.ejs') %>
+
+
+                        
+            
+                        <!-- Save Button -->
+                        <div class="col-12 mt-3">
+                            <button type="submit" class="btn btn-primary float-end">Save</button>
+                        </div>
+
+
+                        </form>
+            
+
+                    </div>
+                </div>
+            </div>
+            
+                  
+
+</div>
+            </div> <!--End div class col-md-9 right align container --> 
+
+            
+        </div>
+    </div> <!-- End of main-cart-contents div -->
+

@@ -1,0 +1,53 @@
+<%- include('../includes/admin-header.ejs') %>
+<%- include('../includes/admin-navbar.ejs') %>
+<%- include('../includes/admin-sidebar.ejs') %>
+
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+   
+    <div class="container pt-4 px-4">
+      <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12">
+              <form action="/cakemania.ng/admin/categories/add-cat"
+               enctype="multipart/form-data" method="post"> <!-- Replace "/submit-form" with your actual form submission URL -->
+                  <div class="cake-container  rounded h-100 p-4">
+                      <h6 class="mb-4">Add Categories</h6>
+
+                      <% if (message) { %>
+                        <div class="error-message"><%= message %></div>
+                    <% } %>
+                    <% if (successMessage) { %>
+                      <div class="success-message"><%= successMessage %></div>
+                  <% } %>
+
+
+                      <div class="mb-3">
+                        <label for="categoryName">Category Name</label>
+                          <input type="text" class="form-control" id="categoryName" name="categoryName"
+                              placeholder="Enter category name">
+                          
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="categoryImage">Category Image</label><br>
+                          <input type="file" class="form-control-file" id="categoryImage" name="categoryImage"
+                              placeholder="Enter category image url">
+                          
+                      </div>
+  
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  
+
+  </main>
+</div>
+</div>
+
+
+
+
+<%- include('../includes/admin-footer.ejs') %>

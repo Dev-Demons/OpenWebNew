@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffe8d6;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 90px;
+}
+
+nav {
+  background-color: #ffe8d6;
+  height: 90px;
+  
+}
+
+.dropdown-menu{
+  width: 20px;
+}
+
+nav .dropdown-menu a:hover{
+  background-color: #483b2c;
+  color: white;
+
+}
+
+.badge {
+  padding-left: 9px;
+  padding-right: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+}
+
+.badge-warning[href] {
+  background-color: #c67605;
+}
+#cart-count{
+    font-size: 12px;
+    background: #ff0000;
+    color: #fff;
+    padding: 0 5px;
+    vertical-align: top;
+    margin-left: -10px; 
+}
+
+/* landing page styles*/
+
+.img-fluid-contained{
+  object-fit: contain;
+}
+
+.cake-container {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background: url("../images/cake.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 6em;
+}
+
+
+.overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(236, 239, 244, 0.5); /* Adjust the alpha (last value) for transparency */
+}
+
+.overlay .row {
+  z-index: 1; 
+  position: relative;
+}
+
+/* Additional styles for overlay text and button  */
+
+.overlay h1,
+.overlay p
+ {
+    color: #fff; 
+    font-family:  'Great Vibes', cursive;
+    font-size: 4em;
+}
+
+
+.carousel-item img {
+  height: 40em;
+  width: auto;
+}   
+.carousel-caption {
+  margin-bottom: 6em;
+}
+
+.shop-btn {
+  background-color: #a86e44;
+  color: white;
+  font-family:'Poppins', sans-serif;
+}
+
+.shop-btn :hover{
+  background-color: red;
+}
+
+
+.categories {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.category-desc { 
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5em;
+  text-shadow: 0 0.3em 8px rgba(0, 0, 0, 0.4);
+}
+
+.card-content {
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-bottom: 3em;
+}
+
+.footer {
+  background-color: #f1caab;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.payment-icons i,
+.social-icons i {
+  font-size: 2rem;
+  margin-right: 15px;
+  color: #fff; 
+}
+
+.social-icons i:hover {
+  color: #fff; 
+}
+
+.payment {
+  @media screen and (max-width: 768px) {
+      padding-left: 0.6em;
+  }
+  padding-left: 4em;
+
+}
+
+/* product page styles*/
+
+.filter-container {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.products-section {
+  margin-top: 0.5em;
+  margin-bottom: 3em;
+}
+
+.product-card {
+  margin-bottom: 3em;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0.7em 10px rgba(0, 0, 0, 0.2);
+}
+
+.product-card:hover {
+  border-radius: 0.25rem; /* Rounded corners on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Visible box shadow on hover */
+}
+
+.product-card:hover .add-to-cart-btn {
+  display: block;
+}
+
+.category-card { /* card that displays categories on index page */
+  box-shadow: 0 0.7em 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-btn {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+} 
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.delete-form{
+  /* background-color: red; */
+  width: 2%;
+  display: flex;
+  margin-left: auto;
+  margin-right: 7px;
+  
+}
+
+.icon-btn{
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.bi-trash{
+  font-size: 1.2rem;
+}
+
+.order-form{
+  padding: 10px;
+}
+

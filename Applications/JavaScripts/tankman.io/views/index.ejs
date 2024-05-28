@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script data-main="javascripts/main" src="javascripts/require.js"></script>
+  </head>
+  <body>
+    <div id="chatBox" style="height:150px; width: 80%; border: 1px solid black; overflow: scroll; display:none;">
+      <table id="messages">
+      </table>
+    </div>
+    <form action="/" id="chatForm" style="display:none;">
+      <input type="text" name="message" id="messageForm">
+      <input type="submit" value="Send">
+    </form>
+    <button id="reset">Reset</button>
+  </body>
+</html>

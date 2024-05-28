@@ -1,0 +1,75 @@
+<%- include('./includes/header.ejs') %>
+
+<%- include('./includes/navbar.ejs') %>
+
+
+<div class="container product-details-container mb-5">
+    <div class="row">
+
+        <!-- Left Column - Product Image -->
+
+        <div class="col-md-4">
+            <img src="<%= cake.image%>" alt="Product Image" class="product-image img-fluid">
+          </div>
+      
+          <!-- Center Column - Product Information -->
+          <div class="col-md-4">
+            <div class="product-info">
+              <div class="product-name">
+                <p><%= cake.cakeName %></p>
+              </div>
+
+              <div class="product-price">₦ <%= cake.price %></div>
+              <div class="product-description">
+                <p><%= cake.description %></p>
+              </div>
+              <div class="product-review">
+                <p><%= cake.review %></p>
+              </div>
+            </div>
+          </div>
+
+
+        <!-- Right Column - Delivery Details and Quantity -->
+        <div class="col-md-4 delivery-container">
+          <% if (successMessage) { %>
+            <div id="successMessage" class="success-message"><%= successMessage %></div>
+        <% } %>
+
+          <form id="addToCartForm" action="/cakemania.ng/cakes/details/<%=cake.cakeID%>" method="post">
+          
+            <p class="mt-2">Quantity</p>
+          <!-- Quantity Adjustment -->
+
+
+          <input class="form-control d-none"  id="quantity" name="quantity" type="number" value="1">
+
+            <div class="quantity-container">
+              <i class="bi bi-dash quantity-icon" onclick="decrementQuantity()"></i>
+              
+              <span name="quantityDisplay" id="quantityDisplay" class="quantity">1</span>
+
+              <i class="bi bi-plus quantity-icon" onclick="incrementQuantity()"></i>
+           </div>
+
+          <!-- Buy Now and Add to Cart Buttons -->
+            <div class="d-grid gap-2"> 
+              <button type="button" onclick="addToCart(event)" class="btn btn-secondary buy-now-btn">Add to Cart Button</button><br>
+            </div>
+
+            <div class="d-grid gap-2"> 
+            <button class="btn btn-info buy-now-btn btn-block">Buy Now</button>
+            </div>
+
+          </form> 
+            
+        </div>
+    </div>
+</div>
+
+
+
+<%- include('./includes/footer.ejs') %>
+
+
+

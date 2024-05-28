@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Baduk</title>
+    <link rel="icon" href="img/favicon.png" type="image/x-icon" />
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.2.4/css/simple-line-icons.css">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-75776244-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+
+    <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
+    <script type="text/javascript">
+    window.cookieconsent_options = {"message":"This website uses cookies to ensure you get the best experience on our website.","dismiss":"Got it!","learnMore":"","link":null,"theme":"dark-bottom"};
+    </script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+</head>
+
+<body>
+    <!-- Game start modal -->
+    <div class="modal fade" id="createGame" role="dialog" data-backdrop="static">
+        <div class="modal-dialog" style="margin-top: 120px">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Create a game</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- <form id="start-form">
+                        <label class="radio-inline">
+                          <input type="radio" name="size" value="19">19x19
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="size" value="13">13x13
+                        </label>
+                        <label class="radio-inline">
+                          <input type="radio" name="size" value="9">9x9
+                        </label>
+                    </form> -->
+                    <ul class="game-size" id="start-form">
+                        <li><label class="size">Size: </label></li>
+                        <li>
+                            <input type="radio" id="a25" value="19" name="amount" checked="checked" />
+                            <label for="a25">19x19</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="a50" value="13" name="amount" />
+                            <label for="a50">13x13</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="a75" value="9" name="amount" />
+                            <label for="a75">9x9</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" id="quit">Cancel</button>
+                    <button class="btn btn-primary" id="startGame">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Head content -->
+    <section class="header">
+        <div class="container main-header text-center">
+            <div class="header-logo-container">
+                <img class="img-responsive" src="img/logo.png">
+                <h1 class="">Baduk</h1>
+            </div>
+            <p>The easiest Go platform you've ever used</p>
+            <button class="btn btn-primary" id="playGame_top"><i class="icon-control-play icons"></i> Play Go</button>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="container text-center about">
+        <h1>What is Baduk?</h1>
+        <p>Baduk is a Go platform without all the bullshit of traditional websites. Developed by a group of students at the University of Waterloo who are sick of ads, plugin downloads, sign-up processes and e-mails. We'll make sure you enjoy Go the way its meant to be enjoyed.</p>
+        <div class="row features-row">
+            <div class="col-md-4">
+                <i class="icon-game-controller icons"></i>
+                <h3>Ad-Free</h3>
+                <p>We know that ads are the last thing you wanna see when playing a game, so we promise you an ad-free environment.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="icon-compass icons"></i>
+                <h3>No Sign-Up</h3>
+                <p>With one click you will get a link to share with your friends. Skip the sign-in completely and head straight into game mode.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="icon-eye icons"></i>
+                <h3>Open Source</h3>
+                <p>Created using the most bleeding-edge technology stack, we welcome any programmers that want to contribute to our <a href="https://github.com/19x19/Baduk/">repository</a>.</p>
+            </div>
+        </div>
+        <button class="btn btn-primary" id="playGame_bot"><i class="icon-control-play icons"></i> Play Now</button>
+    </section>
+    <section class="container-fluid info">
+        <div class="col-md-6">
+            <div class="col-md-10 col-md-offset-1 info-content features-row">
+                <h4>About Baduk</h4>
+                <p>
+Baduk is created by a group of students at the University of Waterloo. It's built using Node.js and Socket.io. If you'd like to give back, you can help contribute to the site. Baduk is an open-source project, so feel free to submit a feature or an issue to our <a href="https://github.com/19x19/baduk">repository</a>.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-10 col-md-offset-1 info-content features-row">
+                <h4>How We Benefit</h4>
+                <p>
+Baduk is not for profit. We don't have ads and we don't collect your information. We cover all the costs of Baduk using our own savings. Inspired by the great <a href="http://lichess.org/">Lichess</a>, we want to do the world a small favour by offering a free service.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Create game processing -->
+    <script>
+    $("#playGame_top").on("click", function() {
+        $("#createGame").modal('show');
+    });
+
+    $("#playGame_bot").on("click", function() {
+        $("#createGame").modal('show');
+    });
+
+    $("#startGame").on("click", function() {
+        $.ajax({
+            type: "POST",
+            url: "/go",
+            data: {
+                'size' : $('input[name=amount]:checked', "#start-form").val(),
+            },
+            success: function(url) {
+                location.href = url;
+            },
+        });
+    });
+
+    $("#quit").on("click", function() {
+        $("#createGame").modal('hide');
+    });
+    </script>
+
+</body>
+
+</html>

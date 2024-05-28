@@ -1,0 +1,72 @@
+<%- include('../includes/admin-header.ejs') %>
+<%- include('../includes/admin-navbar.ejs') %>
+<%- include('../includes/admin-sidebar.ejs') %>
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    
+
+      <!-- Recent Sales Start -->
+      <div class="container-fluid pt-4 px-4">
+        <div class="cake-container text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h5 class="mb-0"> Cakes </h5>
+               
+            </div>
+
+            <% if (message) { %>
+                <div class="success-message"><%= message %></div>
+            <% } %>
+
+
+            <div class="table-responsive">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-white">
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th>
+                            
+                            <th scope="col">Description</th>
+                            <th scope="col">Flavours</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (adminCakes.length === 0) { %>
+                            <p>No cakes available.</p>
+                        <% } else { %>
+                        <% adminCakes.forEach(cakes => { %>
+                        <tr>
+                            <td><img src="<%= cakes.image%>" class="img-fluid"></td>
+                            <td><%= cakes.cakeName%></td>
+                            
+                            <td><%= cakes.description%></td>
+                            <td><%= cakes.flavour%></td>
+                            <td><%= cakes.price%></td>
+                            
+                            <td><a class="btn btn-sm btn-warning" href="/cakemania.ng/admin/cakes/edit-cake/<%=cakes.cakeID%>">Edit</a></td>
+
+                     
+                            <td><a class="btn btn-sm btn-danger trigger-btn" href="#myModal-<%= cakes.cakeID %>" data-bs-toggle="modal" >Delete</a></td>
+
+                            <%- include('../includes/cake-modal.ejs', { cakeID: cakes.cakeID }) %>
+
+                        </tr>
+                        
+                        <% }); %>
+                    <% } %>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Recent Sales End -->
+
+  </main>
+</div>
+</div>
+
+
+<%- include('../includes/admin-footer.ejs') %>

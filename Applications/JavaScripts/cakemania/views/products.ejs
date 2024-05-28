@@ -1,0 +1,52 @@
+<%-include('./includes/header.ejs')%>
+
+<%-include('./includes/navbar.ejs')%>
+
+
+<div class="container filter-container">
+    <div class="row">
+        <!-- Filter Options -->
+        <div class="col-md-3">
+            <h4>Filter Options</h4>
+            <form>
+                <div class="mb-3 mt-3">
+                    <label for="priceRange" class="form-label">Price Range</label>
+                    <input type="range" class="form-range" id="priceRange">
+                </div>
+                <button type="submit" class="btn btn-primary">Apply Filters</button>
+            </form>
+        </div>
+
+        <!-- Product Cards -->
+        <div class="col-md-9 products-section">
+            <h4 class="text-center">Featured Cakes</h4>
+            <div class="row">
+                <% if (cakes.length === 0) { %>
+                    <p>No cakes available in this category.</p>
+                <% } else { %>
+                    <% cakes.forEach(cake => { %>
+                        <div class="col-md-4">
+                            <div class="card product-card position-relative">
+                                <a href="/cakemania.ng/cakes/details/<%=cake.cakeID%>">
+                                    <img style="height: 400px;" src="<%= cake.image%>" class="card-img-top img-fluid" alt="Cake Image">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= cake.cakeName %></h5>
+                                    <p class="card-text"><%= cake.description.slice(0, 20) %></p>
+                                    <p class="card-text">Price: ₦<%= cake.price%></p>
+                                </div>
+                                <div class="add-to-cart-btn btn btn-success">
+
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                <% } %>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+<%- include('./includes/footer.ejs') %>
